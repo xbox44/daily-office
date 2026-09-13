@@ -1,0 +1,252 @@
+:root {
+  --parchment: #f3e4c1;
+  --parchment-2: #e8d4a8;
+  --ink: #3a2415;
+  --ink-soft: #6b4e38;
+  --wine: #7a2e22;
+  --gold: #b8893d;
+  --gold-2: #d4a85a;
+  --terracotta: #c45c32;
+  --umber: #2a1810;
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --font-display: "Cormorant Garamond", "Palatino Linotype", Palatino, serif;
+  --font-body: "EB Garamond", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Karla", -apple-system, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background-color: var(--parchment);
+  background-image:
+    url("../assets/jerusalem-cross.svg"),
+    radial-gradient(1200px 600px at 10% -10%, rgba(196, 92, 50, 0.12), transparent 50%),
+    linear-gradient(180deg, #f7e9c8 0%, var(--parchment) 40%, #e9d3a0 100%);
+  background-size: 180px 180px, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-blend-mode: overlay, normal, normal;
+  min-height: 100dvh;
+  padding-bottom: var(--safe-bottom);
+  -webkit-text-size-adjust: 100%;
+}
+body[data-office="morning"] { --band: #c45c32; }
+body[data-office="noon"] { --band: #b8893d; }
+body[data-office="evening"] {
+  --band: #7a2e22;
+  --parchment: #2f1c14;
+  --parchment-2: #3d261b;
+  --ink: #f3e4c1;
+  --ink-soft: #d4b896;
+  color: var(--ink);
+  background-color: #2a1810;
+  background-image:
+    url("../assets/jerusalem-cross.svg"),
+    linear-gradient(180deg, #3a2218 0%, #2a1810 60%, #1c100c 100%);
+  background-blend-mode: overlay, normal;
+}
+
+button, a { font: inherit; -webkit-tap-highlight-color: rgba(184, 137, 61, 0.3); }
+button { cursor: pointer; }
+
+.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--parchment) 92%, var(--umber));
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  padding: calc(10px + var(--safe-top)) 16px 12px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.brand img { width: 36px; height: 36px; color: var(--wine); }
+body[data-office="evening"] .brand img { color: var(--gold-2); filter: invert(0); }
+.brand h1 {
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+.brand small {
+  display: block;
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--wine);
+}
+body[data-office="evening"] .brand small { color: var(--gold-2); }
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-top: 8px;
+  font-family: var(--font-ui);
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+}
+.clock { font-variant-numeric: tabular-nums; }
+
+.tabs, .date-nav {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+}
+.tabs button, .date-nav button, .btn {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--ink);
+  padding: 8px 12px;
+  font-family: var(--font-ui);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  border-radius: 2px;
+}
+.tabs button.active {
+  background: var(--band, var(--wine));
+  color: #f7ead0;
+  border-color: var(--band, var(--wine));
+}
+.date-nav { justify-content: space-between; align-items: center; }
+.date-nav span { font-family: var(--font-display); font-size: 1.15rem; }
+
+main { max-width: 42rem; margin: 0 auto; padding: 18px 16px 80px; }
+
+.lede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  border-left: 3px solid var(--gold);
+  padding-left: 12px;
+}
+
+.section {
+  background: #f7ebd0;
+  border: 1px solid #d4b56a;
+  margin: 14px 0;
+  padding: 16px 16px 14px;
+  box-shadow: 0 8px 24px rgba(42, 24, 16, 0.08);
+}
+body[data-office="evening"] .section {
+  background: #3a241a;
+  border-color: #6b4a2b;
+}
+.kicker {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+  margin: 0 0 4px;
+}
+.section h2 {
+  font-family: var(--font-display);
+  margin: 0 0 8px;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+.rubric {
+  font-style: italic;
+  color: var(--wine);
+  font-size: 0.95rem;
+  margin: 0 0 8px;
+}
+body[data-office="evening"] .rubric { color: var(--gold-2); }
+.body { font-size: 1.18rem; line-height: 1.6; }
+.verse {
+  display: grid;
+  grid-template-columns: 2.2em 1fr;
+  gap: 8px;
+  margin: 0.25em 0;
+}
+.vn {
+  font-family: var(--font-ui);
+  font-size: 0.75rem;
+  color: var(--gold);
+  padding-top: 0.35em;
+}
+.answer {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px dashed color-mix(in srgb, var(--gold) 50%, transparent);
+}
+
+.esv-text {
+  white-space: pre-wrap;
+  font-family: var(--font-body);
+  font-size: 1.12rem;
+  line-height: 1.55;
+  margin: 0;
+}
+.esv-link { font-size: 0.9rem; margin: 10px 0 0; }
+.esv-link a { color: var(--wine); }
+body[data-office="evening"] .esv-link a { color: var(--gold-2); }
+.key-row {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  font-family: var(--font-ui);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.key-row input {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  padding: 8px;
+  border: 1px solid var(--gold);
+  background: #fffdf6;
+  color: #3a2415;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.complete {
+  display: block;
+  width: 100%;
+  background: var(--wine);
+  color: #f7ead0;
+  border: 0;
+  padding: 14px;
+  font-family: var(--font-ui);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 8px;
+}
+.complete.done { background: #4a6b3a; }
+
+.year {
+  display: grid;
+  grid-template-columns: repeat(18, 1fr);
+  gap: 3px;
+  margin-top: 12px;
+}
+.year i {
+  display: block;
+  aspect-ratio: 1;
+  background: color-mix(in srgb, var(--gold) 25%, transparent);
+}
+.year i.d1 { background: color-mix(in srgb, var(--terracotta) 55%, var(--parchment)); }
+.year i.d2 { background: var(--gold); }
+.year i.d3 { background: var(--wine); }
+.year i.today { outline: 1px solid var(--ink); }
+
+.foot {
+  font-size: 0.8rem;
+  color: var(--ink-soft);
+  margin-top: 28px;
+  line-height: 1.45;
+}
+
+@media (max-width: 520px) {
+  .body { font-size: 1.12rem; }
+  .tabs button { flex: 1; }
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Jerusalem cross">
+  <g fill="#b8893d" opacity="0.95">
+    <rect x="54" y="18" width="12" height="84"/>
+    <rect x="18" y="54" width="84" height="12"/>
+    <rect x="48" y="18" width="24" height="8"/>
+    <rect x="48" y="94" width="24" height="8"/>
+    <rect x="18" y="48" width="8" height="24"/>
+    <rect x="94" y="48" width="8" height="24"/>
+    <rect x="28" y="28" width="6" height="18"/>
+    <rect x="22" y="34" width="18" height="6"/>
+    <rect x="86" y="28" width="6" height="18"/>
+    <rect x="80" y="34" width="18" height="6"/>
+    <rect x="28" y="74" width="6" height="18"/>
+    <rect x="22" y="80" width="18" height="6"/>
+    <rect x="86" y="74" width="6" height="18"/>
+    <rect x="80" y="80" width="18" height="6"/>
+  </g>
+</svg>
