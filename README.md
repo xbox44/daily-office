@@ -4,8 +4,8 @@ A household prayer book for morning, midday, and evening — 365 days, three off
 
 ## What it draws on
 
-- **1662 Book of Common Prayer** — invitation, general confession, collects, canticles, Apostles’ Creed, Lord’s Prayer, thanksgiving
-- **Middelburg Liturgy (1586)** — votum (Psalm 124:8), confession, prayer for illumination
+- **1662 Book of Common Prayer** — invitation, general confession, collects (gathered prayers), canticles, Apostles’ Creed, Lord’s Prayer, thanksgiving
+- **Middelburg Liturgy (1586)** — votum (the vow; Psalm 124:8), confession, prayer for illumination
 - **Westminster Shorter Catechism (1647)** — one question each office, cycling all 107 through the year
 - **Heidelberg Catechism** — Lord’s Day 1 on Sunday mornings
 - **Berean Standard Bible (BSB)** — public-domain modern English (dedicated 30 April 2023); bundled so the phone copy works offline

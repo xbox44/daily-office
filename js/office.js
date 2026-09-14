@@ -97,9 +97,9 @@ window.Office = (function () {
 
     const labels = { morning: "Morning Prayer", noon: "Midday Prayer", evening: "Evening Prayer" };
     const sources = {
-      morning: "Order after the 1662 Book of Common Prayer, with the Middelburg votum and confession (1586), and a daily question from the Westminster Shorter Catechism (1647).",
+      morning: "Order after the 1662 Book of Common Prayer, with the Middelburg votum (the vow) and confession (1586), and a daily question from the Westminster Shorter Catechism (1647).",
       noon: "A brief hour after the Reformed little hours: Scripture, the Lord's Prayer, and catechism — suited to the middle of labour.",
-      evening: "Evening Prayer after the 1662 book, with Nunc dimittis, the Collect for Aid against Perils, and Westminster catechizing."
+      evening: "Evening Prayer after the 1662 book, with Nunc dimittis (Now you dismiss), the Collect (gathered prayer) for Aid against Perils, and Westminster catechizing."
     };
 
     const sections = [];
@@ -108,7 +108,7 @@ window.Office = (function () {
     }
 
     add("Opening sentence", sentence.ref + " · BSB", null, { passage: lookup(sentence.ref) });
-    add("Votum", "Middelburg Liturgy, 1586 · Psalm 124:8 · BSB", null, { passage: lookup("Psalm 124:8") });
+    add("Votum (the vow)", "Middelburg Liturgy, 1586 · Psalm 124:8 · BSB", null, { passage: lookup("Psalm 124:8") });
 
     if (office !== "noon") {
       add("Invitation", "Book of Common Prayer, 1662", L.BCP_EXHORTATION);
@@ -125,19 +125,19 @@ window.Office = (function () {
       add("Old Testament", formatRef(ot) + " · BSB", null, { passage: ot });
       add("New Testament", formatRef(gospel) + " · BSB", null, { passage: gospel });
       add("The Apostles' Creed", "The faith of the Church", L.APOSTLES_CREED);
-      add("Collect of the season", season.label, collect);
-      add("Collect for Grace", "Morning Prayer, 1662", L.COLLECT_GRACE);
+      add("Collect of the season (gathered prayer)", season.label, collect);
+      add("Collect for Grace (gathered prayer)", "Morning Prayer, 1662", L.COLLECT_GRACE);
     } else if (office === "noon") {
       add("A lesson from Proverbs", formatRef(proverb) + " · BSB", null, { passage: proverb });
       add("A lesson from the New Testament", formatRef(nt) + " · BSB", null, { passage: nt });
-      add("Collect of the season", season.label, collect);
-      add("Collect at midday", "A brief hour", L.COLLECT_NOON);
+      add("Collect of the season (gathered prayer)", season.label, collect);
+      add("Collect at midday (gathered prayer)", "A brief hour", L.COLLECT_NOON);
     } else {
       add("New Testament", formatRef(nt) + " · BSB", null, { passage: nt });
-      add("Nunc dimittis", "Luke 2:29-32 · Evening Prayer · BSB", null, { passage: lookup("Luke 2:29-32") });
+      add("Nunc dimittis (Now you dismiss)", "Luke 2:29-32 · Evening Prayer · BSB", null, { passage: lookup("Luke 2:29-32") });
       add("The Apostles' Creed", "The faith of the Church", L.APOSTLES_CREED);
-      add("Collect of the season", season.label, collect);
-      add("Collect for Aid against all Perils", "Evening Prayer, 1662", L.COLLECT_PERILS);
+      add("Collect of the season (gathered prayer)", season.label, collect);
+      add("Collect for Aid against all Perils (gathered prayer)", "Evening Prayer, 1662", L.COLLECT_PERILS);
     }
 
     add("Westminster Shorter Catechism", "Question " + wsc.n + " of 107", "Q. " + wsc.q, { answer: "A. " + wsc.a });
